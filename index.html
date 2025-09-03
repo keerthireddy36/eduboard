@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduBoard – Student Progress Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="eduboard.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <input type="checkbox" id="nav-toggle" class="visually-hidden" aria-hidden="true" />
+
+    <div class="app">
+
+        <nav class="sidebar" aria-label="Primary">
+            <div class="brand" aria-label="EduBoard brand">
+                <div class="logo" aria-hidden="true"></div>
+                <strong>EduBoard</strong>
+            </div>
+            <div class="nav" role="list">
+                <a href="#" aria-current="page">
+                    <svg role="img" aria-label="Dashboard icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 13h8V3H3z"></path>
+                        <path d="M13 21h8V3h-8z"></path>
+                        <path d="M3 21h8v-6H3z"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#subjects">
+                    <svg role="img" aria-label="Subjects icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5V6a2 2 0 0 1 2-2h8l6 6v9.5a1.5 1.5 0 0 1-1.5 1.5H5.5A1.5 1.5 0 0 1 4 19.5z"></path>
+                        <path d="M14 4v5h5"></path>
+                    </svg>
+                    <span>Subjects</span>
+                </a>
+                <a href="#attendance">
+                    <svg role="img" aria-label="Attendance icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path>
+                    </svg>
+                    <span>Attendance</span>
+                </a>
+                <a href="#profile">
+                    <svg role="img" aria-label="Profile icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21a8 8 0 0 0-16 0"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+                <a href="#settings">
+                    <svg role="img" aria-label="Settings icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 15.5A3.5 3.5 0 1 0 12 8.5a3.5 3.5 0 0 0 0 7z"></path>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 8 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 3.6 15a1.65 1.65 0 0 0-1.51-1H2a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 3.6 8a1.65 1.65 0 0 0-.33-1.82l-.06-.06A2 2 0 1 1 6.04 3.3l.06.06A1.65 1.65 0 0 0 7.92 3a1.65 1.65 0 0 0 1-1.51V1a2 2 0 1 1 4 0v.09A1.65 1.65 0 0 0 14 3.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 8c.52 0 1.02.2 1.4.6.38.38.6.88.6 1.4s-.22 1.02-.6 1.4c-.38.4-.88.6-1.4.6z"></path>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </div>
+            <footer>© <span id="year">2025</span> EduBoard</footer>
+        </nav>
+
+
+        <label for="nav-toggle" class="backdrop" aria-hidden="true"></label>
+
+
+        <div class="content">
+
+            <header>
+                <div class="header-left">
+                    <label for="nav-toggle" class="menu-btn" aria-label="Open navigation" role="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                        <span class="hide-sm">Menu</span>
+                    </label>
+                    <h1 class="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <input class="search" type="search" placeholder="Search…" aria-label="Search dashboard" />
+                    <button class="icon-btn notif" aria-label="View notifications">
+                        <span class="dot" aria-hidden="true"></span>
+                        <svg role="img" aria-label="Notifications bell" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 8a6 6 0 1 1 12 0c0 7 3 5 3 9H3c0-4 3-2 3-9" />
+                            <path d="M10 21h4" />
+                        </svg>
+                    </button>
+                    <div class="profile-mini">
+                        <img class="avatar" src="https://i.pravatar.cc/80?img=5" alt="Student avatar" />
+                        <div class="hide-sm">
+                            <div class="profile-name">Keerthi Reddy</div>
+                            <div class="muted small">Roll No: 21BCE1234</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <main id="main" tabindex="-1">
+
+                <section aria-labelledby="overview-title">
+                    <div class="section-title">
+                        <h2 id="overview-title">Student Overview</h2>
+                        <p class="muted">A quick snapshot of this semester</p>
+                    </div>
+                    <div class="cards" role="list">
+                        <article class="card" role="listitem" aria-label="GPA">
+                            <span class="label">GPA</span>
+                            <span class="value" aria-live="polite">8.7</span>
+                            <span class="trend up">▲ +0.2 this term</span>
+                        </article>
+                        <article class="card" role="listitem" aria-label="Attendance">
+                            <span class="label">Attendance</span>
+                            <span class="value">92%</span>
+                            <span class="trend up">▲ Improving</span>
+                        </article>
+                        <article class="card" role="listitem" aria-label="Assignments due">
+                            <span class="label">Assignments Due</span>
+                            <span class="value">3</span>
+                            <span class="trend down">• Next due: Sept 5</span>
+                        </article>
+                        <article class="card" role="listitem" aria-label="Total credits">
+                            <span class="label">Total Credits</span>
+                            <span class="value">22</span>
+                            <span class="trend">Current load</span>
+                        </article>
+                    </div>
+                </section>
+
+                <div class="grid">
+
+                    <section class="card table-card" aria-labelledby="progress-title">
+                        <caption id="progress-title" style="caption-side: top;">Subject Progress</caption>
+                        <table aria-describedby="progress-desc">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Faculty</th>
+                                    <th scope="col">Completion</th>
+                                    <th scope="col">Attendance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Data Structures</td>
+                                    <td>Dr. Sharma</td>
+                                    <td>
+                                        <div class="progress" role="progressbar" aria-label="Data Structures completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="78">
+                                            <span style="width:78%"></span>
+                                        </div>
+                                    </td>
+                                    <td>95%</td>
+                                </tr>
+                                <tr>
+                                    <td>Database Systems</td>
+                                    <td>Prof. Iyer</td>
+                                    <td>
+                                        <div class="progress" role="progressbar" aria-label="Database Systems completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64">
+                                            <span style="width:64%"></span>
+                                        </div>
+                                    </td>
+                                    <td>90%</td>
+                                </tr>
+                                <tr>
+                                    <td>Operating Systems</td>
+                                    <td>Dr. Mishra</td>
+                                    <td>
+                                        <div class="progress" role="progressbar" aria-label="Operating Systems completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="52">
+                                            <span style="width:52%"></span>
+                                        </div>
+                                    </td>
+                                    <td>88%</td>
+                                </tr>
+                                <tr>
+                                    <td>Computer Networks</td>
+                                    <td>Dr. Rao</td>
+                                    <td>
+                                        <div class="progress" role="progressbar" aria-label="Computer Networks completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="83">
+                                            <span style="width:83%"></span>
+                                        </div>
+                                    </td>
+                                    <td>94%</td>
+                                </tr>
+                                <tr>
+                                    <td>AI & ML</td>
+                                    <td>Prof. Gupta</td>
+                                    <td>
+                                        <div class="progress" role="progressbar" aria-label="AI & ML completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="71">
+                                            <span style="width:71%"></span>
+                                        </div>
+                                    </td>
+                                    <td>89%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p id="progress-desc" class="visually-hidden">Each row displays subject completion percentage with a progress bar and attendance percentage.</p>
+                    </section>
+
+
+                    <div class="stack">
+
+                        <section class="card" aria-labelledby="deadlines-title">
+                            <div class="section-title">
+                                <h2 id="deadlines-title">Upcoming Deadlines</h2>
+                                <a href="#" class="muted">View all</a>
+                            </div>
+                            <div class="deadlines" role="list">
+                                <article class="deadline" role="listitem">
+                                    <div class="badge-date" aria-label="Due date September 5">
+                                        <div class="day">05</div>
+                                        <div class="mon">Sep</div>
+                                    </div>
+                                    <div>
+                                        <div class="deadline-title">OS – Process Scheduling Assignment</div>
+                                        <div class="meta">Submit on LMS • 11:59 PM</div>
+                                    </div>
+                                </article>
+                                <article class="deadline" role="listitem">
+                                    <div class="badge-date" aria-label="Due date September 8">
+                                        <div class="day">08</div>
+                                        <div class="mon">Sep</div>
+                                    </div>
+                                    <div>
+                                        <div class="deadline-title">CN – Routing Protocols Quiz</div>
+                                        <div class="meta">In-class • 10:00 AM</div>
+                                    </div>
+                                </article>
+                                <article class="deadline" role="listitem">
+                                    <div class="badge-date" aria-label="Due date September 12">
+                                        <div class="day">12</div>
+                                        <div class="mon">Sep</div>
+                                    </div>
+                                    <div>
+                                        <div class="deadline-title">DBMS – ER Diagram Project</div>
+                                        <div class="meta">Pair work • Upload PDF</div>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+
+
+                        <section id="profile" class="card profile-card" aria-labelledby="profile-title">
+                            <div class="section-title">
+                                <h2 id="profile-title">Student Profile</h2>
+                            </div>
+                            <div class="profile-grid">
+                                <img class="profile-avatar" src="https://i.pravatar.cc/120?img=5" alt="Student profile picture" />
+                                <div>
+                                    <div class="profile-heading">Keerthi Reddy</div>
+                                    <div class="muted">B.Tech – Computer Science</div>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <div class="field"><span class="label">Name</span><span class="val">Keerthi Reddy</span></div>
+                                <div class="field"><span class="label">Roll No</span><span class="val">21BCE1234</span></div>
+                                <div class="field"><span class="label">Email</span><span class="val">keerthi.reddy@college.edu</span></div>
+                                <div class="field"><span class="label">College</span><span class="val">ABC Institute of Technology</span></div>
+                                <div class="field"><span class="label">Department</span><span class="val">Computer Science & Engineering</span></div>
+                                <div class="field"><span class="label">Credits</span><span class="val">22 / 24</span></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+
+                <section id="attendance" aria-labelledby="att-title" class="card attendance-note">
+                    <h2 id="att-title" class="section-title">Attendance Notes</h2>
+                    <p class="muted">Overall attendance this term is 92%. Keep above 75% to maintain eligibility for end-semester exams.</p>
+                </section>
+
+
+                <footer class="muted footer-note">
+                    Made with semantic HTML & CSS • Designed for accessibility • Responsive from 320px+
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
